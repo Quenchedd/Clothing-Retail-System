@@ -122,9 +122,9 @@ int main()
 {
     Clothing item;
     Cart userCart;
-    int choice;
+    int choice = 0;
 
-    while (choice != 6) {
+    while (choice != 5) {
         cout<<"\n=== CLOTHING RETAIL SHOPPING SYSTEM ===\n";
         cout<<"1. Add to Cart\n";
         cout<<"2. View Cart\n";
@@ -140,8 +140,8 @@ int main()
     case 1:
         cout << "\n===== Store Catalog =====\n";
             for (int i = 0; i < item.getCatalogSize(); ++i) {
-                std::cout << "ID: " << item.getItemID(i) << " | " 
-                          << item.getItemName(i) << " - $" << item.getItemPrice(i) << "\n";
+                cout << "ID: " << item.getItemID(i) << " | " 
+                          << item.getItemName(i) << " - RM" << item.getItemPrice(i) << "\n";
             }
         break;
     
