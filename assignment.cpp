@@ -64,6 +64,10 @@ class Clothing : public Store{
         string getItemName(int i){
             return itemName[i]; 
             }
+        
+        string getCategory(int i){
+            return category[i];
+        }
 
         float getItemPrice(int i){
             return price[i]; 
@@ -124,47 +128,49 @@ int main()
     Cart userCart;
     int choice = 0;
 
-    while (choice != 5) {
+    do{
         cout<<"\n=== CLOTHING RETAIL SHOPPING SYSTEM ===\n";
         cout<<"1. Add to Cart\n";
         cout<<"2. View Cart\n";
         cout<<"3. Edit Cart\n";
         cout<<"4. Remove from Cart\n";
-        cout<<"5. Checkout\n";
+        cout<<"5. Checkout\n"<<endl;
         cout<<"Enter Choice: ";
         cin>>choice;
-    }
+    
+        switch (choice)
+        {
+            case 1:
+                cout << "\n===== Store Catalog =====\n";
+                for (int i = 0; i < item.getCatalogSize(); ++i) {
+                    cout << "ID: " << item.getItemID(i) << 
+                    " | " <<  setw(15) << left << item.getItemName(i) << 
+                    " | " << setw(10) << left << item.getCategory(i) <<
+                    " | RM" << fixed << setprecision(2) << item.getItemPrice(i) << "\n";
+                }
+                break;
 
-    switch (choice)
-    {
-    case 1:
-        cout << "\n===== Store Catalog =====\n";
-            for (int i = 0; i < item.getCatalogSize(); ++i) {
-                cout << "ID: " << item.getItemID(i) << " | " 
-                          << item.getItemName(i) << " - RM" << item.getItemPrice(i) << "\n";
-            }
-        break;
+            case 2:
+                /* code */
+                break;
     
-    case 2:
-        /* code */
-        break;
+            case 3:
+                /* code */
+                break;
     
-    case 3:
-        /* code */
-        break;
-    
-    case 4:
-        /* code */
-        break;
+            case 4:
+                /* code */
+                break;
 
-    case 5:
-        /* code */
-        break;
+            case 5:
+                /* code */
+                break;
     
-    default:
-        break;
-    }
+            default:
+                break;
+        }
 
+    }while (choice != 5); 
 
     return 0;
 
