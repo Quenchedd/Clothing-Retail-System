@@ -173,7 +173,7 @@ public:
         quantity   = new int[cartCap]{0};
     }
 
-    // Parameterized constructor — custom cart capacity (unused)
+    // Parameterized constructor — custom cart capacity
     Cart(int cap){
         cartCap = cap;
         cartCount = 0;
@@ -181,7 +181,7 @@ public:
         quantity   = new int[cartCap]{0};
     }
 
-    // Copy constructor — deep copies cart arrays (unused)
+    // Copy constructor — deep copies cart arrays
     Cart(const Cart& other){
         cartCap   = other.cartCap;
         cartCount = other.cartCount;
@@ -242,7 +242,7 @@ public:
 
     // Edit item function
     void editItem(int index, int newQty) {
-        if (index < 0 || index >= cartCount)return;
+        if (index < 0 || index >= cartCount || newQty < 0)return;
         quantity[index] = newQty; // updates quantity
         if (quantity[index] == 0) removeItem(index); // if updated quantity is 0, remove the item
     }
@@ -402,7 +402,7 @@ int main()
                     userCart.addItem(id, qty);
                     cout << "Item added to cart successfully.\n";
                 } else {
-                    cout << "Invalid item ID.\n"; // Item not found or is in a different branch
+                    cout << "Invalid item ID.\n"; // Item not found in this branch
                 }
                 break;
             }
@@ -491,7 +491,7 @@ int main()
                         int idx = branches[b].findIndexByID(cartID);
                         if (idx != -1) {
                             float subtotal = branches[b].getItemPrice(idx) * userCart.getCartQuantity(i);
-                            // Display all cart items and it's details
+                            // Display all cart items and its details
                             cout << "[" << branches[b].getStoreName() << "] "
                                  << branches[b].getItemName(idx)
                                  << " x" << userCart.getCartQuantity(i)
