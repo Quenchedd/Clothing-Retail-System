@@ -379,8 +379,8 @@ int main()
         cout << "\n=== " << branch->getStoreName() << " ===\n";
         cout << "1. Add to Cart\n";
         cout << "2. View Cart\n";
-        cout << "3. Edit Cart\n";
-        cout << "4. Remove from Cart\n";
+        cout << "3. Edit an Item from Cart\n";
+        cout << "4. Remove an Item from Cart\n";
         cout << "5. Switch Branch\n";
         cout << "6. Checkout\n\n";
         cout << "Enter Choice: ";
